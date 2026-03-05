@@ -4,336 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Yash Raj, a Backend Developer focusing on Java, SQL, and APIs.">
+    <meta name="author" content="Yash Raj">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
     <title>YASH RAJ - PORTFOLIO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://formsubmit.co">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root{
-            --bg: #07071a;
-            --bg2: #0b0b2e;
-            --text: #f4f4ff;
-            --muted: rgba(244, 244, 255, 0.72);
-            --card: rgba(255, 255, 255, 0.06);
-            --border: rgba(255, 255, 255, 0.10);
-            --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
-            --accent: #a855f7;
-            --accent2: #22d3ee;
-        }
-
-        [data-theme="light"]{
-            --bg: #f7f7ff;
-            --bg2: #ffffff;
-            --text: #0b1020;
-            --muted: rgba(11, 16, 32, 0.70);
-            --card: rgba(11, 16, 32, 0.04);
-            --border: rgba(11, 16, 32, 0.10);
-            --shadow: 0 18px 50px rgba(11, 16, 32, 0.12);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body{
-            min-height: 100dvh;
-            background:
-                radial-gradient(1200px 600px at 10% 0%, rgba(168, 85, 247, 0.25), transparent 60%),
-                radial-gradient(1000px 600px at 90% 10%, rgba(34, 211, 238, 0.18), transparent 55%),
-                linear-gradient(180deg, var(--bg), var(--bg2));
-            color: var(--text);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        a{ color: inherit; text-decoration: none; }
-        img{ max-width: 100%; display: block; }
-
-        .container{ width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
-        .muted{ color: var(--muted); }
-        .accent{ color: var(--accent); }
-        .chip{
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: 999px;
-            backdrop-filter: blur(12px);
-        }
-
-        /* Nav */
-        header{ position: sticky; top: 0; z-index: 50; }
-        nav{
-            height: 76px;
-            border-bottom: 1px solid var(--border);
-            background: rgba(10, 10, 30, 0.55);
-            backdrop-filter: blur(12px);
-        }
-        [data-theme="light"] nav{ background: rgba(247, 247, 255, 0.75); }
-        .nav-inner{
-            height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-        }
-        .brand{
-            font-weight: 700;
-            letter-spacing: 0.2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            white-space: nowrap;
-        }
-        .brand-dot{
-            width: 10px;
-            height: 10px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            box-shadow: 0 0 0 6px rgba(168, 85, 247, 0.15);
-            animation: pulse-dot 2.8s ease-out infinite;
-        }
-        .nav-links{
-            display: flex;
-            gap: 18px;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-        .nav-links a{
-            padding: 10px 12px;
-            border-radius: 10px;
-            color: var(--muted);
-            transition: transform 180ms ease, background 180ms ease, color 180ms ease;
-        }
-        .nav-links a:hover{
-            color: var(--text);
-            background: rgba(168, 85, 247, 0.12);
-            transform: translateY(-1px);
-        }
-        .nav-links a.active{
-            color: var(--text);
-            background: rgba(34, 211, 238, 0.12);
-            border: 1px solid var(--border);
-        }
-        .nav-actions{ display: flex; gap: 10px; align-items: center; }
-        .icon-btn{
-            border: 1px solid var(--border);
-            background: var(--card);
-            color: var(--text);
-            border-radius: 12px;
-            padding: 10px 12px;
-            cursor: pointer;
-            transition: transform 180ms ease, background 180ms ease;
-            backdrop-filter: blur(12px);
-        }
-        .icon-btn:hover{ transform: translateY(-1px); background: rgba(255, 255, 255, 0.08); }
-
-        /* Sections */
-        section{ padding: 76px 0; scroll-margin-top: 90px; }
-        .hero{
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-        .hero-grid{
-            display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
-            gap: 34px;
-            align-items: center;
-        }
-        .hero h1{
-            font-size: clamp(2rem, 3vw + 1rem, 3.2rem);
-            line-height: 1.12;
-        }
-        .hero p{
-            margin-top: 14px;
-            max-width: 62ch;
-        }
-        #element{ color: var(--accent); font-weight: 700; }
-        .cta-row{
-            margin-top: 22px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .btn{
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 14px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.07);
-            color: var(--text);
-            box-shadow: var(--shadow);
-            transition: transform 180ms ease, background 180ms ease, border 180ms ease;
-        }
-        .btn:hover{ transform: translateY(-2px); background: rgba(168, 85, 247, 0.12); }
-        .btn.primary{
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.95), rgba(34, 211, 238, 0.75));
-            border: 1px solid rgba(255, 255, 255, 0.22);
-        }
-        .btn.primary:hover{ background: linear-gradient(135deg, rgba(168, 85, 247, 1), rgba(34, 211, 238, 0.92)); }
-
-        .hero-card{
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            position: relative;
-            transform: translateZ(0);
-        }
-        .hero-card::before{
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(500px 300px at 20% 10%, rgba(168, 85, 247, 0.18), transparent 60%),
-                        radial-gradient(480px 300px at 90% 40%, rgba(34, 211, 238, 0.12), transparent 55%);
-            pointer-events: none;
-        }
-        .hero-card-inner{
-            padding: 18px;
-            position: relative;
-            animation: float-soft 6s ease-in-out infinite alternate;
-        }
-        .avatar{
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            background: rgba(0, 0, 0, 0.18);
-            box-shadow: 0 0 40px rgba(168, 85, 247, 0.55);
-            transition: transform 220ms ease, box-shadow 220ms ease;
-        }
-        .hero-card:hover .avatar{
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 0 60px rgba(168, 85, 247, 0.78);
-        }
-        .hero-meta{
-            margin-top: 12px;
-            display: grid;
-            gap: 10px;
-        }
-
-        .section-title{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-            margin-bottom: 20px;
-        }
-        .section-title h2{
-            font-size: 1.55rem;
-            letter-spacing: 0.2px;
-        }
-        .grid{
-            display: grid;
-            gap: 14px;
-        }
-        .grid.two{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .grid.three{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-        .card{
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: 18px;
-            padding: 16px;
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(12px);
-            transition: transform 200ms ease, border 200ms ease, background 200ms ease;
-        }
-        .card:hover{
-            transform: translateY(-4px);
-            border-color: rgba(168, 85, 247, 0.35);
-            background: rgba(255, 255, 255, 0.08);
-        }
-        .card h3{ font-size: 1.05rem; }
-        .card p{ margin-top: 8px; color: var(--muted); }
-        .tags{ margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag{
-            padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.05);
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-
-        /* Contact */
-        form{ display: grid; gap: 10px; }
-        .field{
-            display: grid;
-            gap: 6px;
-        }
-        label{ font-size: 0.92rem; color: var(--muted); }
-        input, textarea{
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text);
-            padding: 12px 12px;
-            border-radius: 14px;
-            outline: none;
-            font-family: inherit;
-        }
-        textarea{ min-height: 120px; resize: vertical; }
-        input:focus, textarea:focus{ border-color: rgba(34, 211, 238, 0.55); }
-
-        footer{
-            padding: 28px 0 40px;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-        }
-
-        /* Reveal on scroll */
-        .reveal{
-            opacity: 0;
-            transform: translateY(14px);
-            transition: opacity 650ms ease, transform 650ms ease;
-        }
-        .reveal.visible{
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Back to top */
-        .to-top{
-            position: fixed;
-            right: 18px;
-            bottom: 18px;
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(6px);
-            transition: opacity 180ms ease, transform 180ms ease;
-        }
-        .to-top.visible{
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
-        }
-
-        @keyframes float-soft {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-            100% { transform: translateY(-2px); }
-        }
-
-        @keyframes pulse-dot {
-            0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.40); }
-            70% { box-shadow: 0 0 0 10px rgba(168, 85, 247, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
-        }
-
-        @media (max-width: 900px){
-            .hero-grid{ grid-template-columns: 1fr; }
-            .grid.three{ grid-template-columns: 1fr; }
-            .grid.two{ grid-template-columns: 1fr; }
-            .nav-links{ display: none; }
-        }
-
-        @media (prefers-reduced-motion: reduce){
-            html{ scroll-behavior: auto; }
-            .card, .btn, .nav-links a, .icon-btn, .reveal{ transition: none !important; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body data-theme="dark">
@@ -354,6 +35,11 @@
                 </div>
 
                 <div class="nav-actions">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                     <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
                         Theme
                     </button>
@@ -380,8 +66,10 @@
                     </h1>
 
                     <p class="muted">
-                        Detail-oriented Computer Science undergraduate with hands-on experience in Java, SQL, and backend development.
-                        I enjoy designing scalable applications, managing databases, and solving real-world problems through clean code.
+                        Detail-oriented Computer Science undergraduate with hands-on experience in Java, SQL, and
+                        backend development.
+                        I enjoy designing scalable applications, managing databases, and solving real-world problems
+                        through clean code.
                     </p>
 
                     <div class="cta-row">
@@ -393,7 +81,8 @@
 
                 <div class="hero-card reveal" aria-label="Profile card">
                     <div class="hero-card-inner">
-                        <img class="avatar" src="yash-hero.png" alt="Illustration of Yash Raj working on backend code" />
+                        <img class="avatar" src="yash-hero.png" alt="Illustration of Yash Raj working on backend code"
+                            loading="lazy" decoding="async" />
                         <div class="hero-meta">
                             <div class="chip" style="justify-content: space-between;">
                                 <span class="muted">Role</span>
@@ -420,8 +109,10 @@
                     <div class="card reveal">
                         <h3>Who I am</h3>
                         <p>
-                            I’m a Computer Science undergraduate at SRM Institute of Science and Technology (2022–2026) from Ghaziabad, India.
-                            I focus on Java development, SQL and data structures, and I like building reliable console and backend applications that mirror real banking and analytics workflows.
+                            I’m a Computer Science undergraduate at SRM Institute of Science and Technology (2022–2026)
+                            from Ghaziabad, India.
+                            I focus on Java development, SQL and data structures, and I like building reliable console
+                            and backend applications that mirror real banking and analytics workflows.
                         </p>
                     </div>
 
@@ -442,11 +133,14 @@
                         <h3>Education</h3>
                         <p class="muted">My academic background so far:</p>
                         <ul style="margin-top: 8px; padding-left: 18px; color: var(--muted);">
-                            <li><strong>B.E. in Computer Science</strong> – SRM Institute of Science and Technology<br />
+                            <li><strong>B.E. in Computer Science</strong> – SRM Institute of Science and
+                                Technology<br />
                                 Aug 2022 – May 2026</li>
-                            <li style="margin-top: 6px;"><strong>Class XII (PCM)</strong> – Oriental College, BSEB, Patna<br />
+                            <li style="margin-top: 6px;"><strong>Class XII (PCM)</strong> – Oriental College, BSEB,
+                                Patna<br />
                                 Apr 2021 – Mar 2022</li>
-                            <li style="margin-top: 6px;"><strong>Class X</strong> – Dr. DY Patil Pushapalata Patil International School, CBSE, Patna<br />
+                            <li style="margin-top: 6px;"><strong>Class X</strong> – Dr. DY Patil Pushapalata Patil
+                                International School, CBSE, Patna<br />
                                 Apr 2019 – Mar 2020</li>
                         </ul>
                     </div>
@@ -456,11 +150,16 @@
                         <p class="muted">Some of the hands-on experience I’ve gained:</p>
                         <ul style="margin-top: 8px; padding-left: 18px; color: var(--muted);">
                             <li><strong>Java Developer Intern – NativeSoftTech (Nov–Dec 2024)</strong><br />
-                                Built Java applications like a Banking System and Student Management System using OOP, HashMap, and database connectivity.</li>
-                            <li style="margin-top: 6px;"><strong>GenAI Data Analytics Micro-Internship – TATA (Forage, Sep 2025)</strong><br />
-                                Performed exploratory data analysis, risk profiling, and delinquency prediction using GenAI tools to support business decisions.</li>
-                            <li style="margin-top: 6px;"><strong>Generation Green Intern – Oppo India (Aug 2024–Jun 2025)</strong><br />
-                                Researched sustainable energy solutions and contributed to reports and presentations on green technology.</li>
+                                Built Java applications like a Banking System and Student Management System using OOP,
+                                JDBC for MySQL connectivity, and robust exception handling.</li>
+                            <li style="margin-top: 6px;"><strong>GenAI Data Analytics Micro-Internship – TATA (Forage,
+                                    Sep 2025)</strong><br />
+                                Performed exploratory data analysis, risk profiling, and delinquency prediction using
+                                GenAI tools to support business decisions.</li>
+                            <li style="margin-top: 6px;"><strong>Generation Green Intern – Oppo India (Aug 2024–Jun
+                                    2025)</strong><br />
+                                Researched sustainable energy solutions and contributed to reports and presentations on
+                                green technology.</li>
                         </ul>
                     </div>
 
@@ -500,11 +199,13 @@
                     <article class="card reveal">
                         <h3>Secure Banking System (Java)</h3>
                         <p>
-                            Java-based banking application supporting account creation, deposits, withdrawals, fund transfers,
+                            Java-based banking application supporting account creation, deposits, withdrawals, fund
+                            transfers,
                             and real-time transaction history.
                         </p>
                         <p class="muted" style="margin-top: 6px;">
-                            Implemented user authentication, modular CRUD operations, and robust exception handling using
+                            Implemented user authentication, modular CRUD operations, and robust exception handling
+                            using
                             HashMap and ArrayList for efficient in-memory data management.
                         </p>
                         <div class="tags">
@@ -512,15 +213,29 @@
                             <span class="tag">OOP</span>
                             <span class="tag">Collections</span>
                         </div>
+                        <div style="margin-top: 16px;">
+                            <a href="https://github.com/YashRaj3470/" target="_blank" rel="noreferrer"
+                                class="btn primary"
+                                style="padding: 8px 12px; font-size: 0.85rem; width: 100%; justify-content: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
+                                View Source Code
+                            </a>
+                        </div>
                     </article>
 
                     <article class="card reveal">
                         <h3>Currency Converter (Java + API)</h3>
                         <p>
-                            Console-based converter for 10+ currencies using live exchange rates fetched via HTTP requests.
+                            Console-based converter for 10+ currencies using live exchange rates fetched via HTTP
+                            requests.
                         </p>
                         <p class="muted" style="margin-top: 6px;">
-                            Integrated an external API with HttpURLConnection, parsed JSON responses, and used HashMap for
+                            Integrated an external API with HttpURLConnection, parsed JSON responses, and used HashMap
+                            for
                             fast currency lookups, with validation and formatted output.
                         </p>
                         <div class="tags">
@@ -528,21 +243,47 @@
                             <span class="tag">API Integration</span>
                             <span class="tag">JSON</span>
                         </div>
+                        <div style="margin-top: 16px;">
+                            <a href="https://github.com/YashRaj3470/" target="_blank" rel="noreferrer"
+                                class="btn primary"
+                                style="padding: 8px 12px; font-size: 0.85rem; width: 100%; justify-content: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
+                                View Source Code
+                            </a>
+                        </div>
                     </article>
 
                     <article class="card reveal">
                         <h3>Tic Tac Toe Game (Java)</h3>
                         <p>
-                            Two-player console Tic Tac Toe with a 3×3 grid, win/draw detection, and invalid-move handling.
+                            Two-player console Tic Tac Toe with a 3×3 grid, win/draw detection, and invalid-move
+                            handling.
                         </p>
                         <p class="muted" style="margin-top: 6px;">
-                            Used 2D arrays, reusable helper methods, and clear separation of game logic to practice loops,
+                            Used 2D arrays, reusable helper methods, and clear separation of game logic to practice
+                            loops,
                             conditionals, and method abstraction.
                         </p>
                         <div class="tags">
                             <span class="tag">Java</span>
                             <span class="tag">2D Arrays</span>
                             <span class="tag">Game Logic</span>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <a href="https://github.com/YashRaj3470/" target="_blank" rel="noreferrer"
+                                class="btn primary"
+                                style="padding: 8px 12px; font-size: 0.85rem; width: 100%; justify-content: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
+                                View Source Code
+                            </a>
                         </div>
                     </article>
                 </div>
@@ -560,13 +301,16 @@
                     <div class="card reveal">
                         <h3>Let’s talk</h3>
                         <p class="muted">
-                            Prefer email? Reach out directly or use the form. I’m based in Ghaziabad, India and open to Java / backend internships and entry-level roles.
+                            Prefer email? Reach out directly or use the form. I’m based in Ghaziabad, India and open to
+                            Java / backend internships and entry-level roles.
                         </p>
                         <div class="tags" style="margin-top: 14px;">
                             <a class="tag" href="mailto:yashraj0326@gmail.com">Email: yashraj0326@gmail.com</a>
                             <a class="tag" href="tel:+919939650482">Phone: +91&nbsp;99396&nbsp;50482</a>
-                            <a class="tag" href="https://www.linkedin.com/in/yash-raj-a2230324a/" target="_blank" rel="noreferrer">LinkedIn</a>
-                            <a class="tag" href="https://github.com/YashRaj3470" target="_blank" rel="noreferrer">GitHub</a>
+                            <a class="tag" href="https://www.linkedin.com/in/yash-raj-a2230324a/" target="_blank"
+                                rel="noreferrer">LinkedIn</a>
+                            <a class="tag" href="https://github.com/YashRaj3470" target="_blank"
+                                rel="noreferrer">GitHub</a>
                         </div>
                     </div>
 
@@ -580,11 +324,13 @@
                             </div>
                             <div class="field">
                                 <label for="email">Email</label>
-                                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+                                <input id="email" name="email" type="email" autocomplete="email"
+                                    placeholder="you@example.com" required />
                             </div>
                             <div class="field">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                                <textarea id="message" name="message" placeholder="Tell me about your project..."
+                                    required></textarea>
                             </div>
                             <button class="btn primary" type="submit">Send message</button>
                             <p class="muted" style="font-size: 0.9rem;">
@@ -598,63 +344,24 @@
 
     </main>
 
+    <footer style="text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Yash Raj. All rights reserved.</p>
+            <div style="margin-top: 10px; display: inline-flex; gap: 15px;">
+                <a href="https://github.com/YashRaj3470" target="_blank" rel="noreferrer" class="muted"
+                    style="transition: color 0.3s;" onmouseover="this.style.color='var(--text)'"
+                    onmouseout="this.style.color='var(--muted)'">GitHub</a>
+                <a href="https://www.linkedin.com/in/yash-raj-a2230324a/" target="_blank" rel="noreferrer" class="muted"
+                    style="transition: color 0.3s;" onmouseover="this.style.color='var(--text)'"
+                    onmouseout="this.style.color='var(--muted)'">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
     <a class="icon-btn to-top" id="toTop" href="#home" aria-label="Back to top">Top</a>
 
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
-    <script>
-        // Typed hero text
-        if (window.Typed) {
-            new Typed('#element', {
-                strings: ['reliable backends.', 'Java projects.', 'clean APIs.'],
-                typeSpeed: 44,
-                backSpeed: 22,
-                backDelay: 900,
-                loop: true,
-            });
-        }
-
-        // Theme toggle (saved to localStorage)
-        const themeToggle = document.getElementById('themeToggle');
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light' || savedTheme === 'dark') {
-            document.body.setAttribute('data-theme', savedTheme);
-        }
-        themeToggle?.addEventListener('click', () => {
-            const next = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            document.body.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
-
-        // Scroll-reveal
-        const revealEls = Array.from(document.querySelectorAll('.reveal'));
-        const io = new IntersectionObserver((entries) => {
-            for (const e of entries) {
-                if (e.isIntersecting) e.target.classList.add('visible');
-            }
-        }, { threshold: 0.12 });
-        revealEls.forEach(el => io.observe(el));
-
-        // Active nav link + back-to-top button
-        const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-        const sections = navLinks
-            .map(a => document.querySelector(a.getAttribute('href')))
-            .filter(Boolean);
-
-        const toTop = document.getElementById('toTop');
-        const setActive = () => {
-            const y = window.scrollY + 110;
-            let activeId = 'home';
-            for (const sec of sections) {
-                if (sec.offsetTop <= y) activeId = sec.id;
-            }
-            navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${activeId}`));
-            if (toTop) toTop.classList.toggle('visible', window.scrollY > 600);
-        };
-        window.addEventListener('scroll', setActive, { passive: true });
-        setActive();
-
-        // Contact form is handled by FormSubmit (no extra JS needed)
-    </script>
+    <script defer src="script.js"></script>
 </body>
 
 </html>
